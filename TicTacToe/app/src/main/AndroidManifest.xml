@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.abinstance.tictactoe">
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <!-- You have to reference all activities in this file -->
+        <!-- Android 12 or higher must have android:exported="true".
+        If the app component includes the LAUNCHER category,
+        set android:exported to true. In most other cases,
+        set android:exported to false -->
+        <activity android:name=".MainActivity" android:exported="true">
+            <!-- Declares the capabilities of this activity so it can respond
+            to intents ("main" intents, in this case) from other apps. -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <!-- This category indicates this activity is the initial activity
+                of a task and is listed in the system's application launcher. -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".GameActivity" android:exported="false">
+        </activity>
+    </application>
+</manifest>
