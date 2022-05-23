@@ -256,7 +256,7 @@ public class GameFragment extends Fragment {
         builder.append(mPlayer.name());
         builder.append(',');
         for (int large = 0; large < 9; large++) {
-            // Save the owner of each large tile
+            // save the owner of each large tile
             builder.append(mLargeTiles[large].getOwner().name());
             builder.append(',');
             for (int small = 0; small < 9; small++) {

@@ -17,14 +17,14 @@ public class Tile {
         BOTH
     }
 
-    // These levels are defined in the drawable definitions
+    // these levels are defined in the drawable definitions
     private static final int LEVEL_X = 0; // blue (both square or small board)
     private static final int LEVEL_O = 1; // red (both square or small board)
     private static final int LEVEL_BLANK = 2; // neither owns small board (gray) or empty square
     private static final int LEVEL_AVAILABLE = 3; // small square available (green)
     private static final int LEVEL_TIE = 3; // both own the small board (purple)
 
-    private GameFragment mGame;
+    private final GameFragment mGame;
     private Owner mOwner = Owner.NEITHER;
     private View mView;
     private Tile[] mSubTiles;
