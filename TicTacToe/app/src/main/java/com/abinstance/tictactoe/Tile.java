@@ -110,11 +110,9 @@ public class Tile {
         // each element of these integer arrays initially gets default value 0
         int[] totalX = new int[4];
         int[] totalO = new int[4];
-        /**
-         * check if 3 sub-tiles have been captured in-a-row i.e., are aligned.
-         * read as "frequency of [0 | 1 | 2 | 3] X's or O's is the index value" or
-         * read as "number of [0 | 1 | 2 | 3]-in-a-row for X or O".
-         */
+        /* check if 3 sub-tiles have been captured in-a-row i.e., are aligned.
+           read as "frequency of [0 | 1 | 2 | 3] X's or O's is the index value" or
+           read as "number of [0 | 1 | 2 | 3]-in-a-row for X or O". */
         countCaptures(totalX, totalO);
 
         // here we are interested in a frequency of 3 occurrences, i.e., a win!
@@ -170,12 +168,10 @@ public class Tile {
                 if (owner == Owner.O || owner == Owner.BOTH)
                     capturedO++;
             } // end inner for (horizontal check)
-            /**
-             * increment (+1) value of Xs from default 0 (index is number of Xs)
-             * assume after first loop, capturedX is 3, then value of totalX[3] is 1
-             * after third loop, totalX[3] have will have a maximum of 3 (unlikely).
-             * we only need totalX[3] to be at least 1 to win the tile!
-             */
+            /* increment (+1) value of Xs from default 0 (index is number of Xs)
+               assume after first loop, capturedX is 3, then value of totalX[3] is 1
+               after third loop, totalX[3] have will have a maximum of 3 (unlikely).
+               we only need totalX[3] to be at least 1 to win the tile! */
             totalX[capturedX]++; // increments the value at index capturedX
             totalO[capturedO]++; // increments the element at position capturedO
         } // end outer for (horizontal check)

@@ -19,25 +19,25 @@ public class GameFragment extends Fragment {
     /** mLargeIds and mSmallIds are constant arrays that map a number (0 through 8)
      * onto the resource ids of the large and small tiles, respectively
      */
-    private static int[] mLargeIds = { R.id.large1, R.id.large2, R.id.large3,
+    private final static int[] mLargeIds = { R.id.large1, R.id.large2, R.id.large3,
             R.id.large4, R.id.large5, R.id.large6, R.id.large7, R.id.large8,
             R.id.large9 };
-    private static int[] mSmallIds = { R.id.small1, R.id.small2, R.id.small3,
+    private final static int[] mSmallIds = { R.id.small1, R.id.small2, R.id.small3,
             R.id.small4, R.id.small5, R.id.small6, R.id.small7, R.id.small8,
             R.id.small9 };
     /**
      * Tile class represents one tile at any level of the game
      */
-    private Tile mEntireBoard = new Tile(this);; // 1 tile for the whole game
-    private Tile[] mLargeTiles = new Tile[9]; // 9 tiles (small boards)
-    private Tile[][] mSmallTiles = new Tile[9][9]; // 81 tiles (small squares)
+    private final Tile mEntireBoard = new Tile(this); // 1 tile for the whole game
+    private final Tile[] mLargeTiles = new Tile[9]; // 9 tiles (small boards)
+    private final Tile[][] mSmallTiles = new Tile[9][9]; // 81 tiles (small squares)
 
     private Tile.Owner mPlayer = Tile.Owner.X; // player X always goes first
 
     /** create a HashSet to contain unique Tile objects where it’s possible
      *  to make a move at any given time, based on past moves and game rules
      */
-    private Set<Tile> mAvailable = new HashSet<Tile>();
+    private final Set<Tile> mAvailable = new HashSet<>();
 
     // indices of the last move
     private int mLastSmall;
@@ -82,8 +82,6 @@ public class GameFragment extends Fragment {
     // initializes the game state
     public void initGame() {
         Log.d("UT3", "init game");
-        mEntireBoard = new Tile(this); // initialize the large board
-
         // create all the tiles (9 small boards and 81 small tiles)
         for (int large = 0; large < 9; large++) {
             mLargeTiles[large] = new Tile(this);
@@ -112,8 +110,7 @@ public class GameFragment extends Fragment {
             mLargeTiles[large].setView(outer);
 
             for (int small = 0; small < 9; small++) {
-                ImageButton inner =
-                    (ImageButton) outer.findViewById(mSmallIds[small]);
+                ImageButton inner = outer.findViewById(mSmallIds[small]);
                 // current indices will be bound to each small tile
                 final int fLarge = large;
                 final int fSmall = small;
@@ -222,10 +219,9 @@ public class GameFragment extends Fragment {
             }
         }
 
-        /** if there were none available, make all squares available
-         * here is where first fake move from -1 makes all tiles available!
-         * also, if all squares in the target board are claimed
-         */
+        /* If there were none available, make all squares available
+           here is where first fake move from -1 makes all tiles available!
+           also, if all squares in the target board are claimed */
         if (mAvailable.isEmpty())
             setAllAvailable();
     } // end method setAvailableFromLastMove

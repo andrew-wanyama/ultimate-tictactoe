@@ -17,4 +17,13 @@
     <string name="main_menu_label">Main Menu</string>
     <string name="next_player">Next Player: %1$s</string>
     <string name="declare_winner">%1$s is the winner</string>
+    <string name="small1_desc">image button row 0 column 0</string>
+    <string name="small2_desc">image button row 0 column 1</string>
+    <string name="small3_desc">image button row 0 column 2</string>
+    <string name="small4_desc">image button row 1 column 0</string>
+    <string name="small5_desc">image button row 1 column 1</string>
+    <string name="small6_desc">image button row 1 column 2</string>
+    <string name="small7_desc">image button row 2 column 0</string>
+    <string name="small8_desc">image button row 2 column 1</string>
+    <string name="small9_desc">image button row 2 column 28</string>
 </resources>

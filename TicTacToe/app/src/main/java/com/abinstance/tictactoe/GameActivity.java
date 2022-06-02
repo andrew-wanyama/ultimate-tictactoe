@@ -38,7 +38,7 @@ public class GameActivity extends Activity {
 
     // show next player view
     public void showNextPlayer(final Tile.Owner next) {
-        TextView nextPlayerTextView = (TextView) findViewById(R.id.next_player);
+        TextView nextPlayerTextView = findViewById(R.id.next_player);
         nextPlayerTextView.setText(getString(R.string.next_player, next));
     }
 
