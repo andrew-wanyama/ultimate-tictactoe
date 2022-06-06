@@ -7,6 +7,13 @@
     android:clipChildren="false"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cloudy_sky"
+        android:contentDescription="main screen background image"/>
+
     <fragment
         android:id="@+id/main_fragment"
         class="com.abinstance.tictactoe.MainFragment"
