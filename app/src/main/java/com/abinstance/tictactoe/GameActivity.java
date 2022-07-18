@@ -12,8 +12,8 @@ import android.util.Log;
 import android.widget.TextView;
 
 public class GameActivity extends Activity {
-    public static final String KEY_RESTORE = "key_restore";
-    public static final String PREF_RESTORE = "pref_restore";
+    public static final String KEY_RESTORE = "com.abinstance.tictactoe.key_restore";
+    public static final String PREF_RESTORE = "com.abinstance.tictactoe.pref_restore";
     private GameFragment mGameFragment;
 
     @Override
